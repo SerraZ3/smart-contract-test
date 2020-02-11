@@ -1,0 +1,21 @@
+{
+  "name": "smartcontractstest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "compile": "node compile.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ganache-cli": "^6.1.8",
+    "solc": "^0.4.17",
+    "truffle-hdwallet-provider": "0.0.3",
+    "web3": "^1.2.6"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
