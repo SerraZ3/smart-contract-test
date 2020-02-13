@@ -14,8 +14,8 @@ beforeEach(async () => {
     .deploy({ data: bytecode, arguments: ["Meu primeiro contrato"] })
     .send({ from: accounts[0], gas: "1000000" });
 });
-describe("Contrato Loteria", () => {
-  it("Inbox", () => {
+describe("Inbox", () => {
+  it("Deploy a contract", () => {
     // console.log(inbox);
     assert.ok(inbox.options.address);
   });

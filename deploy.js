@@ -23,7 +23,7 @@ const deploy = async () => {
   const result = await new web3.eth.Contract(JSON.parse(interface))
     .deploy({ data: bytecode, arguments: ["Estamos na red Rikeby"] })
     .send({ gas: "1000000", from: accounts[0] });
-  console.log(interface);
+  // console.log(interface);
   console.log("Contrato implementado em ", result.options.address);
 };
 deploy();
