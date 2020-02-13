@@ -14,20 +14,8 @@ beforeEach(async () => {
     .deploy({ data: bytecode, arguments: ["Meu primeiro contrato"] })
     .send({ from: accounts[0], gas: "1000000" });
 });
-describe("Contrato Loteria", () => {
-  it("Inbox", () => {
-    // console.log(inbox);
+describe("Inbox 03", () => {
+  it("Deploy a contract", () => {
     assert.ok(inbox.options.address);
-  });
-  it("Mensagem Padrão", async () => {
-    const message = await inbox.methods.message().call();
-    assert.equal(message, "Meu primeiro contrato");
-  });
-  it("Modificando a Mensagem", async () => {
-    await inbox.methods
-      .setMessage("Mudei o valor da mensagem!")
-      .send({ from: accounts[0] });
-    const message = await inbox.methods.message().call();
-    assert.equal(message, "Mudei o valor da mensagem!");
   });
 });

@@ -15,3 +15,5 @@ mnemonic = 'tessa asdf eqwe'
 Rode o mando `npm install --save`
 
 Para rodar os testes use o comando `npm test`
+
+Para rodar o `deploy.js` use `node deploy.js`
