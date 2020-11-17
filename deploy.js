@@ -6,10 +6,7 @@ const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
 
 // Importar o codigo dos bytecodes e da interface
-const {
-  abi,
-  evm: { bytecode },
-} = require("./compile");
+const { abi, evm } = require("./compile");
 
 // Passamos dois argumentos, as palavras mnemonicas e o link da rede infura
 const provider = new HDWalletProvider({
@@ -26,7 +23,7 @@ const deploy = async () => {
   //Recuperamos as contas
   console.log("Contas usadas para o deploy ", accounts[0]);
   const result = await new web3.eth.Contract(abi)
-    .deploy({ data: bytecode.object, arguments: ["Estamos na red Rikeby"] })
+    .deploy({ data: evm.bytecode.object, arguments: ["Estamos na red Rikeby"] })
     .send({ gas: "1000000", from: accounts[0] });
   // console.log(abi);
   console.log("Contrato implementado em ", result.options.address);
